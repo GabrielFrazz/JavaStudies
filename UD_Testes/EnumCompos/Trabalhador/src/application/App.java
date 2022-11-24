@@ -16,8 +16,7 @@ public class App {
         Scanner sc = new Scanner(System.in);
 
         DateTimeFormatter fmt1 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        DateTimeFormatter fmt2 = DateTimeFormatter.ofPattern("MM/yyyy");
-        
+
         System.out.print("Digite o departamento: ");
         String departmentName = sc.nextLine();
         System.out.println("Digite os dados do empregado:");
@@ -33,12 +32,12 @@ public class App {
 
         Worker wr = new Worker(name, WorkerLevel.valueOf(level), baseSalary, new Department(departmentName));
 
-        for(int i=1;i<=N;i++){
+        for (int i = 1; i <= N; i++) {
             System.out.println("digite as informacoes do #" + i + " contrato:");
             System.out.print("data (DD/MM/YYYY):");
             sc.nextLine();
             String date = sc.nextLine();
-            LocalDate d01 = LocalDate.parse(date,fmt1);
+            LocalDate d01 = LocalDate.parse(date, fmt1);
             System.out.print("valor por hora: ");
             double valuePH = sc.nextDouble();
             System.out.print("duracao (em horas): ");
@@ -52,9 +51,9 @@ public class App {
         System.out.print("digite o mes e ano para calcular o salario (MM/YYYY): ");
         sc.nextLine();
         String date = sc.nextLine();
-        LocalDate d02 = LocalDate.parse(date,fmt2);
+        LocalDate d02 = LocalDate.parse("01/" + date, fmt1);
         int year = d02.getYear();
-        int month = d02.getMonthValue(); 
+        int month = d02.getMonthValue();
 
         System.out.println("nome: " + wr.getName());
         System.out.println("departamento: " + wr.getDepartment().getName());
