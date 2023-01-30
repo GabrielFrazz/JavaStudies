@@ -18,6 +18,7 @@ public class App {
 
         int i;
 
+        try{
         for (i = 0; i < N; i++) {
             System.out.println();
             System.out.printf("Aluguel #%d:\n",i+1);
@@ -42,8 +43,9 @@ public class App {
             }
             
         }
-
+    }finally{
         sc.close();
+    }
         
 
     }
